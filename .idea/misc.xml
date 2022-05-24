@@ -14,17 +14,27 @@
         <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/drawable/ic_baseline_user.xml" value="0.2265" />
         <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2265" />
         <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/drawable/shape_circle.xml" value="0.2265" />
+        <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/activity_book_info.xml" value="0.1" />
+        <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/activity_book_list.xml" value="0.1" />
+        <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/activity_create_patient_card.xml" value="0.22826086956521738" />
         <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/activity_event.xml" value="0.16" />
         <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/activity_event_detail.xml" value="0.1" />
         <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/activity_feedback.xml" value="0.1" />
+        <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/activity_hospital.xml" value="0.1" />
+        <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/activity_hospital_detail.xml" value="0.1" />
         <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/activity_item.xml" value="0.22826086956521738" />
         <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/activity_login.xml" value="0.10925925925925926" />
         <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/activity_main2.xml" value="0.22826086956521738" />
         <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/activity_news_list.xml" value="0.1" />
+        <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/activity_outpatient_department_list.xml" value="0.22826086956521738" />
+        <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/activity_patient_card.xml" value="0.1" />
         <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/activity_traffic.xml" value="0.22826086956521738" />
         <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/activity_update_passwd.xml" value="0.22826086956521738" />
         <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/activity_user_info.xml" value="0.22826086956521738" />
         <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/activity_welcome.xml" value="0.1" />
+        <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/book_item.xml" value="0.22826086956521738" />
         <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/comment_item.xml" value="0.1" />
         <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/content_news_list.xml" value="0.1" />
         <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/detail_activity.xml" value="0.22826086956521738" />
@@ -34,8 +44,12 @@
         <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/fragment_news.xml" value="0.10925925925925926" />
         <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/fragment_service.xml" value="0.10925925925925926" />
         <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/fragment_user.xml" value="0.1" />
+        <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/hospital_item.xml" value="0.1" />
         <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/news_fragment_item.xml" value="0.1" />
         <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/news_item.xml" value="0.1" />
+        <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/outpatient_department_item.xml" value="0.1" />
+        <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/patient.xml" value="0.22826086956521738" />
+        <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/patient_card_item.xml" value="0.1" />
         <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/service_item.xml" value="0.22826086956521738" />
         <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/title_bar.xml" value="0.18432971014492755" />
         <entry key="..\:/studyRecord/project/SmartCity2/app/src/main/res/layout/title_layout.xml" value="0.22826086956521738" />

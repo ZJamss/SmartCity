@@ -7,7 +7,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
-import com.zjamss.smartcity2.R;
 import com.zjamss.smartcity2.constant.Constants;
 import com.zjamss.smartcity2.databinding.ActivityUserInfoBinding;
 import com.zjamss.smartcity2.http.CallBackImpl;
@@ -37,9 +36,11 @@ public class UserInfoActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<UserInfoDTO> call, Response<UserInfoDTO> response) {
                 super.onResponse(call, response);
-                if (response.isSuccessful()) {
+                if (response.body().getCode() == 200) {
                     user = response.body().getUser();
                     updateUserInfo();
+                }else {
+                    Toast.makeText(UserInfoActivity.this,"获取信息失败",Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -71,7 +72,7 @@ public class UserInfoActivity extends AppCompatActivity {
         binding.userId.setText(user.getUserId() + "");
         binding.username.setText(user.getUserName());
         binding.nickname.setText(user.getNickName());
-        Glide.with(UserInfoActivity.this).load(R.drawable.ic_baseline_user).into(binding.image);
+        Glide.with(UserInfoActivity.this).load(user.getAvatar()).into(binding.image);
         if (user.getSex().equals("0")) {
             binding.man.setChecked(true);
         } else {

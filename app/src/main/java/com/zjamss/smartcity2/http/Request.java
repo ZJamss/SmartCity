@@ -5,9 +5,12 @@ import com.zjamss.smartcity2.http.dto.ActivityDTO;
 import com.zjamss.smartcity2.http.dto.ActivityTagDTO;
 import com.zjamss.smartcity2.http.dto.BannerDTO;
 import com.zjamss.smartcity2.http.dto.BasicDTO;
+import com.zjamss.smartcity2.http.dto.HospitalListDTO;
 import com.zjamss.smartcity2.http.dto.LoginDTO;
 import com.zjamss.smartcity2.http.dto.NewsDTO;
 import com.zjamss.smartcity2.http.dto.NewsTagDTO;
+import com.zjamss.smartcity2.http.dto.OutpatientDepartment;
+import com.zjamss.smartcity2.http.dto.PatientCardDTO;
 import com.zjamss.smartcity2.http.dto.RecommendedServiceDTO;
 import com.zjamss.smartcity2.http.dto.UserInfoDTO;
 import com.zjamss.smartcity2.model.User;
@@ -76,4 +79,18 @@ public interface Request {
     @POST("/prod-api/api/activity/signup")
     Call<BasicDTO> signUpActivity(@Header("Authorization") String token,@Body RequestBody body);
 
+    @GET("/prod-api/api/hospital/hospital/list")
+    Call<HospitalListDTO> getHospitalList();
+
+    @GET("/prod-api/api/hospital/patient/list")
+    Call<PatientCardDTO> getPatientCardList(@Header("Authorization") String token);
+
+    @POST("/prod-api/api/hospital/patient")
+    Call<BasicDTO> createPatientCard(@Header("Authorization") String token,@Body RequestBody body);
+
+    @GET("/prod-api/api/hospital/category/list")
+    Call<OutpatientDepartment> getOutpatientDepartmentList();
+
+    @POST("/prod-api/api/hospital")
+    Call<BasicDTO> book(@Header("Authorization") String token,@Body RequestBody body);
 }

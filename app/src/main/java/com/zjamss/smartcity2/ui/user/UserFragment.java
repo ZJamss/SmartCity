@@ -15,7 +15,7 @@ import com.google.gson.Gson;
 import com.zjamss.smartcity2.R;
 import com.zjamss.smartcity2.constant.Constants;
 import com.zjamss.smartcity2.databinding.FragmentUserBinding;
-import com.zjamss.smartcity2.model.User;
+import com.zjamss.smartcity2.http.dto.UserInfoDTO;
 import com.zjamss.smartcity2.ui.acitivty.user.FeedbackActivity;
 import com.zjamss.smartcity2.ui.acitivty.user.LoginActivity;
 import com.zjamss.smartcity2.ui.acitivty.user.UpdatePasswdActivity;
@@ -27,7 +27,7 @@ public class UserFragment extends Fragment {
 
     FragmentUserBinding binding;
     SharedPreferences sp;
-    User user;
+    UserInfoDTO.UserDTO user;
     boolean login;
     public UserFragment() {
         // Required empty public constructor
@@ -45,7 +45,7 @@ public class UserFragment extends Fragment {
         login = sp.getBoolean(Constants.IS_LOGIN,false);
         if(login){
             Constants.TOKEN = sp.getString(Constants.GET_TOKEN,null);
-            user = new Gson().fromJson(sp.getString(Constants.USER_INFO,"?"), User.class);
+            user = new Gson().fromJson(sp.getString(Constants.USER_INFO,"?"), UserInfoDTO.UserDTO.class);
             updateLoginInfo();
         }
     }
@@ -99,7 +99,7 @@ public class UserFragment extends Fragment {
 
     private void updateLoginInfo(){
         Constants.TOKEN = sp.getString(Constants.GET_TOKEN,null);
-        user = new Gson().fromJson(sp.getString(Constants.USER_INFO,"?"), User.class);
+        user = new Gson().fromJson(sp.getString(Constants.USER_INFO,"?"), UserInfoDTO.UserDTO.class);
         Glide.with(getContext()).load(user.getAvatar()).into(binding.avatar);
         binding.username.setText(user.getUserName());
     }

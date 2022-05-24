@@ -14,6 +14,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartCity2">
         <activity
+            android:name=".ui.acitivty.hospital.BookInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.acitivty.hospital.BookListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.acitivty.hospital.OutpatientDepartmentListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.acitivty.hospital.CreatePatientCardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.acitivty.hospital.PatientCardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.acitivty.hospital.HospitalDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.acitivty.hospital.HospitalActivity"
+            android:exported="false"
+            android:launchMode="singleTask"/>
+        <activity
             android:name=".ui.acitivty.event.EventDetailActivity"
             android:exported="false" />
         <activity

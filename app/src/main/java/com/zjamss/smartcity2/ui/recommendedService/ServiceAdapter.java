@@ -16,6 +16,7 @@ import com.zjamss.smartcity2.constant.Constants;
 import com.zjamss.smartcity2.http.dto.RecommendedServiceDTO;
 import com.zjamss.smartcity2.ui.MainActivity;
 import com.zjamss.smartcity2.ui.acitivty.event.EventActivity;
+import com.zjamss.smartcity2.ui.acitivty.hospital.HospitalActivity;
 
 import java.util.List;
 
@@ -56,16 +57,19 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHold
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         RecommendedServiceDTO.RowsDTO bean = services.get(position);
         holder.serviceName.setText(bean.getServiceName());
-        switch (bean.getServiceName()) {
-            case "更多服务":
-                holder.itemView.setOnClickListener(v -> MainActivity.binding.mainVp.setCurrentItem(1));
-                Glide.with(holder.serviceImage).load(R.drawable.ic_baseline_more).into(holder.serviceImage);
-                break;
-            case "活动管理":
-                holder.itemView.setOnClickListener(v -> v.getContext().startActivity(new Intent(v.getContext(), EventActivity.class)));
-            default:
-                Glide.with(holder.serviceImage).load(Constants.BASE_URL + bean.getImgUrl()).into(holder.serviceImage);
-
+        if (bean.getServiceName().equals("更多服务")) {
+            holder.itemView.setOnClickListener(v -> MainActivity.binding.mainVp.setCurrentItem(1));
+            Glide.with(holder.serviceImage).load(R.drawable.ic_baseline_more).into(holder.serviceImage);
+        } else {
+            switch (bean.getServiceName()) {
+                case "活动管理":
+                    holder.itemView.setOnClickListener(v -> v.getContext().startActivity(new Intent(v.getContext(), EventActivity.class)));
+                    break;
+                case "门诊预约":
+                    holder.itemView.setOnClickListener(v -> v.getContext().startActivity(new Intent(v.getContext(), HospitalActivity.class)));
+                    break;
+            }
+            Glide.with(holder.serviceImage).load(Constants.BASE_URL + bean.getImgUrl()).into(holder.serviceImage);
         }
     }
 

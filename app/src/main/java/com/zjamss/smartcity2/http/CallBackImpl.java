@@ -3,7 +3,6 @@ package com.zjamss.smartcity2.http;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.zjamss.smartcity2.SmartCityApplication;
 import com.zjamss.smartcity2.constant.Constants;
 import com.zjamss.smartcity2.ui.MainActivity;
 
@@ -23,8 +22,16 @@ public abstract class CallBackImpl<T> implements Callback<T> {
     @Override
     public void onResponse(Call<T> call, Response<T> response) {
         Log.i(Constants.REQUEST_INFO, response.toString());
+        Log.i(Constants.REQUEST_INFO, response.message());
         if (!response.isSuccessful()) {
             Toast.makeText(MainActivity.CONTEXT, response.code() + "", Toast.LENGTH_SHORT).show();
+            try {
+                Log.e(Constants.REQUEST_FAILED, response.errorBody().string());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else if(response.code() != 200){
             try {
                 Log.e(Constants.REQUEST_FAILED, response.errorBody().string());
             } catch (IOException e) {

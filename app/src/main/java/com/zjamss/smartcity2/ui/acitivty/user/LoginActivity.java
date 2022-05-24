@@ -12,9 +12,8 @@ import com.zjamss.smartcity2.constant.Constants;
 import com.zjamss.smartcity2.databinding.ActivityLoginBinding;
 import com.zjamss.smartcity2.http.CallBackImpl;
 import com.zjamss.smartcity2.http.dto.LoginDTO;
+import com.zjamss.smartcity2.http.dto.UserInfoDTO;
 import com.zjamss.smartcity2.http.http;
-import com.zjamss.smartcity2.model.User;
-import com.zjamss.smartcity2.ui.MainActivity;
 import com.zjamss.smartcity2.util.Utils;
 
 import org.json.JSONException;
@@ -58,18 +57,21 @@ public class LoginActivity extends AppCompatActivity {
                 public void onResponse(Call<LoginDTO> call, Response<LoginDTO> response) {
                     super.onResponse(call, response);
                     String token = response.body().getToken();
-                    if (response.isSuccessful() && token != null) {
+                    if (response.body().getCode() == 200 && token != null) {
                         editor.putString(Constants.GET_TOKEN, token);
                         editor.putBoolean(Constants.IS_LOGIN, true);
-                        editor.putString(Constants.USER_INFO, new Gson().toJson(new User(username, passwd)));
-                        editor.commit();
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                        finish();
+                        http.request.getUserInfo(token).enqueue(new CallBackImpl<UserInfoDTO>() {
+                            @Override
+                            public void onResponse(Call<UserInfoDTO> call, Response<UserInfoDTO> response) {
+                                super.onResponse(call, response);
+                                editor.putString(Constants.USER_INFO, new Gson().toJson(response.body().getUser()));
+                                editor.commit();
+                                finish();
+                            }
+                        });
                     } else Toast.makeText(LoginActivity.this, "登陆失败", Toast.LENGTH_SHORT).show();
 
                 }
-
-
             });
 
         });

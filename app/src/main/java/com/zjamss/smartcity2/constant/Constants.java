@@ -12,6 +12,7 @@ public class Constants {
     public static final String REQUEST_INFO = "request_info";
 
     public static final String USER_INFO = "user_info";
+    public static final String PATIENTS = "patients";
     public static final String IS_LOGIN = "is_login";
     public static final String GET_TOKEN = "get_token";
     public static final String KEY_WORD = "key_word";

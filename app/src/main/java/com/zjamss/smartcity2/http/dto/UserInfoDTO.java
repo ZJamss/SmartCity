@@ -2,6 +2,8 @@ package com.zjamss.smartcity2.http.dto;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 /**
  * @Program: SmartCity2
  * @Description:
@@ -41,7 +43,7 @@ public class UserInfoDTO {
         this.user = user;
     }
 
-    public static class UserDTO {
+    public static class UserDTO implements Serializable {
         @SerializedName("userId")
         private int userId;
         @SerializedName("userName")
